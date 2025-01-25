@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PantyTexture_0: 3241137316687911042
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
