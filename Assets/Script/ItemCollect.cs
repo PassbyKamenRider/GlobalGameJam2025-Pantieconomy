@@ -5,8 +5,6 @@ using UnityEngine;
 public class ItemCollect : MonoBehaviour
 {
     public Item item;
-    [SerializeField] public bool test;
-
 
     void Collect()
     {
@@ -16,9 +14,12 @@ public class ItemCollect : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && test)
+        if (Input.GetKeyDown(KeyCode.Escape) && Globals.enableTestMode)
         {
-            Collect();
+            for (int i = 0; i < 100; i++)
+            {
+                Collect();
+            }
         }
     }
 }
