@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
 
+
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
@@ -32,30 +33,37 @@ public class InventoryManager : MonoBehaviour
 
     public void ListItem()
     {
+
+        foreach (Transform item in ItemContent)
+        {
+            if (item != null)
+            {
+                Destroy(item.gameObject);
+            }
+        }
+
+
         foreach (Item item in Items)
         {
             if (item != null)
             {
                 GameObject obj = Instantiate(InventoryItem, ItemContent);
-                var itemName = obj.transform.Find("Item/ItemName").GetComponent<Text>();
-                var itemIcon = obj.transform.Find("Item/ItemIcon").GetComponent<Image>();
 
-                itemName.text = item.itemName;
-                itemIcon.sprite = item.icon;
-                listedGameObj.Add(obj);
+                var Name = obj.transform.Find("ItemName").GetComponent<Text>();
+                
+                Name.text = item.itemName;
+
+                var Icon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+
+                Icon.sprite = item.itemIcon;
+                
+                
+
+          
 
             }
         }
     }
 
-    public void DeleteItems()
-    {
-        foreach (GameObject obj in listedGameObj)
-        {
-            if (obj != null)
-            {
-                Destroy(obj);
-            }
-        }
-    }
+    
 }
