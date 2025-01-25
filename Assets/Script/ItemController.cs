@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.InputSystem.Processors;
 
-public class InventoryControl : MonoBehaviour
+public class ItemController : MonoBehaviour
 {
 
-    [SerializeField] GameObject Inventory;
+    public Item item;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,11 +15,5 @@ public class InventoryControl : MonoBehaviour
     void Update()
     {
         
-    }
-
-
-    public void ExitButton()
-    {
-        Inventory.SetActive(false);
     }
 }
