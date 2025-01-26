@@ -254,6 +254,7 @@ MonoBehaviour:
   itemIcon: {fileID: 0}
   itemQuantity: 0
   itemPrice: 0
+  itemMaterials: []
   itemIconImg: {fileID: 5033928694982541236}
   itemNameText: {fileID: 3704884960310035879}
   itemQuantityText: {fileID: 4958727957489920761}
@@ -358,8 +359,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -705,7 +706,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
