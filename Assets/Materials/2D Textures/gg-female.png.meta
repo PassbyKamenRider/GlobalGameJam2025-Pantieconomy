@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gg-female_0: 8881009098300342936
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -29,6 +29,7 @@ public class MarketItemDisplay : MonoBehaviour
 
     private void DisplayItem()
     {
+        marketManager.SelectItem(this);
         marketManager.ChangeDescription(itemDescription);
         marketManager.ChangeModelMat(itemMaterials);
     }
