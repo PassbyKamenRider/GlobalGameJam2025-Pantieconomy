@@ -15,4 +15,5 @@ MonoBehaviour:
   id: 0
   itemName: TestItem
   num: 0
-  itemIcon: {fileID: 1260697579054986907, guid: b15dde3f3d524ad48870e13d62076228, type: 3}
+  rarity: 0
+  itemIcon: {fileID: -3077172674436042898, guid: 3a84a9c15f9587145862fd031f48990a, type: 3}

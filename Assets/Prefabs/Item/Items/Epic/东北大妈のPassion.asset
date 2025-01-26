@@ -15,8 +15,7 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: f5bdf29f466c44d4f93183b2a744fe86, type: 2}
   - {fileID: 2100000, guid: f5bdf29f466c44d4f93183b2a744fe86, type: 2}
-  itemName: "\u4E1C\u5317\u5927\u5988\u306EPassion"
-  itemDescription: "\u7A7F\u4E0A\u8FD9\u6761\u5185\u88E4\uFF0C\u77AC\u95F4\u5316\u8EAB\u5E7F\u573A\u821EC\u4F4D\uFF0C\u6574\u4E2A\u5C0F\u533A\u90FD\u80FD\u611F\u53D7\u5230\u4F60\u7684\u70ED\u60C5\u4E0E\u5B9E\u529B\uFF01Slip
-    these on and become the queen of the square dance\u2014your passion will light
-    up the whole neighborhood!"
+  itemName: DongBei Passion
+  itemDescription: "Slip these on and become the queen of the square dance\u2014your
+    passion will light up the whole neighborhood!"
   itemIcon: {fileID: 9104831847383482129, guid: 3ecf2742a4693be4a87bf6f24e99b4a3, type: 3}

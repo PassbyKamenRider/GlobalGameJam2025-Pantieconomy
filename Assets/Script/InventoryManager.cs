@@ -10,7 +10,9 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager Instance;
     public List<Item> Items = new List<Item>();
 
-    
+
+
+
 
 
     public Transform ItemContent;
@@ -30,6 +32,7 @@ public class InventoryManager : MonoBehaviour
         Items.Remove(item);
     }
 
+    
 
     public void ListItem()
     {

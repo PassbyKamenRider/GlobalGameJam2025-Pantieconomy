@@ -15,7 +15,7 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: 47939b08b83c9bd48960c9e7f249405c, type: 2}
   - {fileID: 2100000, guid: 981a1470c40d89642aa341af3d023d52, type: 2}
-  itemName: "\u53EA\u56E0\u4F60\u592A\u7F8E Only Because UR Beautiful"
+  itemName: Only Because UR Beautiful
   itemDescription: 'Put on this sparkling masterpiece and let the Kun Duck remind
     everyone: you''re dazzling, only because UR beautiful!'
   itemIcon: {fileID: -5184295107126701292, guid: de958a9379ba01740a4ba5de2c49105c, type: 3}
