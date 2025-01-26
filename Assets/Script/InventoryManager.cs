@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] GameObject pantDisplayArea;
     [SerializeField] TextMeshProUGUI descriptionText;
     [SerializeField] MeshRenderer[] modelMaterial;
+    [SerializeField] GameObject[] models;
     public static InventoryManager Instance;
     public Dictionary<Item, int> items = new();
     public Transform ItemContent;
@@ -22,33 +23,66 @@ public class InventoryManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        foreach (Item i in commonItems)
+        {
+            items[i] = 0;
+        }
+        foreach (Item i in uncommonItems)
+        {
+            items[i] = 0;
+        }
+        foreach (Item i in rareItems)
+        {
+            items[i] = 0;
+        }
+        foreach (Item i in epicItems)
+        {
+            items[i] = 0;
+        }
+        foreach (Item i in legendaryItems)
+        {
+            items[i] = 0;
+        }
+        ListItem();
+    }
+
     private void Update()
     {
-        if (Globals.enableTestMode && Input.GetKeyDown(KeyCode.E))
+        if (Globals.enableTestMode)
         {
-            Debug.Log("Add Test Inventory");
-            foreach (Item i in commonItems)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                AddItem(i);
-                AddItem(i);
+                Debug.Log("Add Test Inventory");
+                foreach (Item i in commonItems)
+                {
+                    AddItem(i);
+                    AddItem(i);
+                }
+                foreach (Item i in uncommonItems)
+                {
+                    AddItem(i);
+                }
+                foreach (Item i in rareItems)
+                {
+                    AddItem(i);
+                }
+                foreach (Item i in epicItems)
+                {
+                    AddItem(i);
+                }
+                foreach (Item i in legendaryItems)
+                {
+                    AddItem(i);
+                }
+                ListItem();
             }
-            foreach (Item i in uncommonItems)
+            
+            if (Input.GetKeyDown(KeyCode.R))
             {
-                AddItem(i);
+                SwitchModel();
             }
-            foreach (Item i in rareItems)
-            {
-                AddItem(i);
-            }
-            foreach (Item i in epicItems)
-            {
-                AddItem(i);
-            }
-            foreach (Item i in legendaryItems)
-            {
-                AddItem(i);
-            }
-            ListItem();
         }
     }
 
@@ -148,5 +182,13 @@ public class InventoryManager : MonoBehaviour
 
         descriptionText.text = i.itemDescription;
         modelMaterial[modelGender].material = i.materials[modelGender];
+    }
+
+    public void SwitchModel()
+    {
+        modelGender = Mathf.Abs(modelGender - 1);
+        models[0].SetActive(false);
+        models[1].SetActive(false);
+        models[modelGender].SetActive(true);
     }
 }

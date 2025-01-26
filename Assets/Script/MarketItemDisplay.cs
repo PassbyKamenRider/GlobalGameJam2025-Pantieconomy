@@ -8,6 +8,7 @@ public class MarketItemDisplay : MonoBehaviour
     [HideInInspector] public Sprite itemIcon;
     [HideInInspector] public float itemQuantity, itemPrice;
     [HideInInspector] public Material[] itemMaterials;
+    [HideInInspector] public Item item;
     [SerializeField] Image itemIconImg;
     [SerializeField] TextMeshProUGUI itemNameText, itemQuantityText, itemPriceText;
     [SerializeField] Button button;

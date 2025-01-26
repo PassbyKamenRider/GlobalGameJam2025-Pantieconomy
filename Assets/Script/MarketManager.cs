@@ -14,6 +14,8 @@ public class MarketManager : MonoBehaviour
     [SerializeField] MeshRenderer[] modelMaterial;
     private int modelGender; // 0: female, 1: male
     private MarketItemDisplay selectedItem;
+    private InventoryManager inventoryManager;
+    private SoundManager soundManager;
 
     [Header("Math")]
 
@@ -38,6 +40,8 @@ public class MarketManager : MonoBehaviour
 
     private void Start()
     {
+        inventoryManager = FindAnyObjectByType<InventoryManager>();
+        soundManager = FindAnyObjectByType<SoundManager>();
         StartCoroutine(MarketRefresh());
     }
 
@@ -79,6 +83,7 @@ public class MarketManager : MonoBehaviour
         marketItemDisplay.itemIcon = randItem.itemIcon;
         marketItemDisplay.itemDescription = randItem.itemDescription;
         marketItemDisplay.itemMaterials = randItem.materials;
+        marketItemDisplay.item = randItem;
 
         //calculate price
         float modifier = Random.Range(-inflationModifierRange, inflationModifierRange);
@@ -195,6 +200,8 @@ public class MarketManager : MonoBehaviour
         {
             selectedItem.itemQuantity -= 1;
             selectedItem.UpdateDisplay();
+            inventoryManager.AddItem(selectedItem.item);
+            soundManager.PlayPurchaseSound();
             Debug.Log("Bought item " + selectedItem.itemName + " with price: " + selectedItem.itemPrice);
         }
     }
