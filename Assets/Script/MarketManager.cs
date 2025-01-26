@@ -11,7 +11,7 @@ public class MarketManager : MonoBehaviour
     public Item[] commonItems, uncommonItems, rareItems, epicItems, legendaryItems;
     [SerializeField] GameObject pantDisplayArea;
     [SerializeField] TextMeshProUGUI descriptionText;
-    [SerializeField] MeshRenderer modelMaterial;
+    [SerializeField] MeshRenderer[] modelMaterial;
     private int modelGender; // 0: female, 1: male
     private MarketItemDisplay selectedItem;
 
@@ -167,7 +167,7 @@ public class MarketManager : MonoBehaviour
 
     public void ChangeModelMat(Material[] mat)
     {
-        modelMaterial.material = mat[modelGender];
+        modelMaterial[modelGender].material = mat[modelGender];
     }
 
     public void SelectItem(MarketItemDisplay item)

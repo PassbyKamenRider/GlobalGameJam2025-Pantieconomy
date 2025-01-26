@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: floar red
   m_EditorClassIdentifier: 
+  itemRarity: 1
   materials:
   - {fileID: 2100000, guid: d797d7f0278ce3c4a931538aaa2c5e3a, type: 2}
   - {fileID: 2100000, guid: d797d7f0278ce3c4a931538aaa2c5e3a, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: "Grandma\u2019s Timeless Floral Panties\u2014A Relic of the Last
     Century"
   itemIcon: {fileID: 6088028037226107009, guid: a7bc89c36534c4d428314c01e0ba2cf8, type: 3}
+  isLightening: 0

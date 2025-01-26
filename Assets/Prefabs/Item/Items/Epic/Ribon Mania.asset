@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: Ribon Mania
   m_EditorClassIdentifier: 
+  itemRarity: 3
   materials:
   - {fileID: 2100000, guid: f1a894865eb0d684b8b508935cf7f19a, type: 2}
   - {fileID: 2100000, guid: 551c64640891da94386cd566bca462fc, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: "The ultimate pair for ribbon lovers\u2014wear this and let the
     world know your love for bows!"
   itemIcon: {fileID: -1597317574526502107, guid: 28ce3ec2825cf33478fc326fe191714f, type: 3}
+  isLightening: 0

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: Coal Balls
   m_EditorClassIdentifier: 
+  itemRarity: 3
   materials:
   - {fileID: 2100000, guid: a120f8830258f3445899efc827517825, type: 2}
   - {fileID: 2100000, guid: a34b4343353347044bfefed515b4e232, type: 2}
   itemName: Coal Balls
   itemDescription: One Purches, two satisfaction
   itemIcon: {fileID: 5334132911671565474, guid: 0a335414ab07fba409b0d5b8108cffbc, type: 3}
+  isLightening: 0

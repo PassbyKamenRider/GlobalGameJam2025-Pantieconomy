@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: Fruity
   m_EditorClassIdentifier: 
+  itemRarity: 2
   materials:
   - {fileID: 2100000, guid: 64615abafd56c584d8dd1244e795cdd6, type: 2}
   - {fileID: 2100000, guid: 64615abafd56c584d8dd1244e795cdd6, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: "Packed with more oranges and grapefruits than your local farmer\u2019s
     market\u2014these undies are the zest of the best!"
   itemIcon: {fileID: 4373375746296112580, guid: 769959f450dd2ed4882c9f6da795005e, type: 3}
+  isLightening: 0

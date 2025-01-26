@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: Patrick Star
   m_EditorClassIdentifier: 
+  itemRarity: 2
   materials:
   - {fileID: 2100000, guid: 8adc6b540a2d15c45be0316396f3581f, type: 2}
   - {fileID: 2100000, guid: 5b8d1196aa8acc14f8144cd7179e4f7c, type: 2}
@@ -20,3 +21,4 @@ MonoBehaviour:
     himself. Wear these, and every day will feel like a \u2018no thoughts, just vibes\u2019
     kind of day."
   itemIcon: {fileID: 7455233344948614363, guid: 7433a25fa9e750746a9fda5c6c19596d, type: 3}
+  isLightening: 0
