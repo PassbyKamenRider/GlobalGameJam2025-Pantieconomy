@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MarketManager : MonoBehaviour
 {
@@ -142,6 +143,8 @@ public class MarketManager : MonoBehaviour
                 GenerateMarketItem(inflation, PriceFive, 4);
             }
         }
+
+
     }
 
     private IEnumerator MarketRefresh()
@@ -163,6 +166,10 @@ public class MarketManager : MonoBehaviour
 
             yield return new WaitForSeconds(refreshRate);
         }
+
+        yield return new WaitForSeconds(refreshRate);
+
+        SceneManager.LoadScene("End");
     }
 
     public void ChangeDescription(string text)

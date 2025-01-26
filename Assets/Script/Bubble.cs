@@ -85,7 +85,7 @@ public class Bubble : MonoBehaviour
                 }
 
                 Debug.Log("Dropped item with rarity: " + Globals.rarityTable[rarity]);
-                GameObject tmp = Instantiate(vfxs[rarity], transform,false);
+                GameObject tmp = Instantiate(vfxs[rarity], transform);
                 tmp.transform.localScale = tmp.transform.localScale * 0.1f;
                 if(rarity >= 4) rarity = 4;
                 InventoryManager.Instance.AddRandItem(rarity);

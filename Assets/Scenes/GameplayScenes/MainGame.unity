@@ -4632,6 +4632,10 @@ PrefabInstance:
       value: MarketManager
       objectReference: {fileID: 0}
     - target: {fileID: 4730215226300259054, guid: 18c5c276a702de846989ce6a9680b99a, type: 3}
+      propertyPath: refreshRate
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4730215226300259054, guid: 18c5c276a702de846989ce6a9680b99a, type: 3}
       propertyPath: MarketContent
       value: 
       objectReference: {fileID: 790680809}
