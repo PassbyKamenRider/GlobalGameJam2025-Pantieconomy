@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: floral yellow
   m_EditorClassIdentifier: 
+  itemRarity: 1
   materials:
   - {fileID: 2100000, guid: c82e6c1626a4c21448399aa8d3ccbd9d, type: 2}
   - {fileID: 2100000, guid: c82e6c1626a4c21448399aa8d3ccbd9d, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: "Grandma\u2019s Timeless Floral Panties\u2014A Relic of the Last
     Century"
   itemIcon: {fileID: 4456493401876371339, guid: 802a729332c9a924fbb639704c630e98, type: 3}
+  isLightening: 0

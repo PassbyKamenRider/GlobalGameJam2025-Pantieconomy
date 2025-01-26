@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: Strawberry Feeling
   m_EditorClassIdentifier: 
+  itemRarity: 2
   materials:
   - {fileID: 2100000, guid: 01ca42ef4eb2b0b4cb5a99b3575503ce, type: 2}
   - {fileID: 2100000, guid: 01ca42ef4eb2b0b4cb5a99b3575503ce, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: "Sweet, juicy, and slightly embarrassing\u2014just like the first
     crush you never got over."
   itemIcon: {fileID: -2631560447722731990, guid: a3d4abc101e1ff947bb7e7c9f593399d, type: 3}
+  isLightening: 0

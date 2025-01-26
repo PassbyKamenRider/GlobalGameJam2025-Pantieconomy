@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: Coalball
   m_EditorClassIdentifier: 
+  itemRarity: 3
   materials:
   - {fileID: 2100000, guid: 5032428ff5a9e5a4f81526b68a87fb7a, type: 2}
   - {fileID: 2100000, guid: 5032428ff5a9e5a4f81526b68a87fb7a, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: A little cat designed by one of the developer, meow meow meow
     meow meow
   itemIcon: {fileID: -6197930206599207144, guid: 938cef20902772a468a91740ac6e8e1e, type: 3}
+  isLightening: 0

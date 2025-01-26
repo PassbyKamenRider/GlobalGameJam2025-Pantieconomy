@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: Squog
   m_EditorClassIdentifier: 
+  itemRarity: 2
   materials:
   - {fileID: 2100000, guid: 35d5c752fad24504fb0780937be82ba3, type: 2}
   - {fileID: 2100000, guid: acf0187e116c2df4580fcf217936791e, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: Perfect for when you want to look classy but feel miserable. These
     tentacle-themed undies come with a subtle scent of clarinet failure.
   itemIcon: {fileID: -5940712370463374476, guid: 71625deb3047c1841a0638d107119c43, type: 3}
+  isLightening: 0

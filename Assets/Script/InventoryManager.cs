@@ -1,21 +1,55 @@
-using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
 using UnityEngine.UI;
-using System.Linq;
+using TMPro;
 
 
 public class InventoryManager : MonoBehaviour
 {
+    [SerializeField] Color[] rarityColors;
+    [SerializeField] GameObject pantDisplayArea;
+    [SerializeField] TextMeshProUGUI descriptionText;
+    [SerializeField] MeshRenderer[] modelMaterial;
     public static InventoryManager Instance;
     public Dictionary<Item, int> items = new();
     public Transform ItemContent;
     public GameObject InventoryItem;
     public Item[] commonItems, uncommonItems, rareItems, epicItems, legendaryItems;
+    private int modelGender; // 0: female, 1: male
+
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Update()
+    {
+        if (Globals.enableTestMode && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Add Test Inventory");
+            foreach (Item i in commonItems)
+            {
+                AddItem(i);
+                AddItem(i);
+            }
+            foreach (Item i in uncommonItems)
+            {
+                AddItem(i);
+            }
+            foreach (Item i in rareItems)
+            {
+                AddItem(i);
+            }
+            foreach (Item i in epicItems)
+            {
+                AddItem(i);
+            }
+            foreach (Item i in legendaryItems)
+            {
+                AddItem(i);
+            }
+            ListItem();
+        }
     }
 
     public void AddItem(Item item)
@@ -88,6 +122,10 @@ public class InventoryManager : MonoBehaviour
             {
                 GameObject obj = Instantiate(InventoryItem, ItemContent);
 
+                obj.GetComponent<Image>().color = rarityColors[i.Key.itemRarity];
+
+                obj.GetComponent<Button>().onClick.AddListener(() => DisplayItem(i.Key));
+
                 var Name = obj.transform.Find("ItemCount").GetComponent<Text>();
                 
                 Name.text = i.Value.ToString();
@@ -102,5 +140,13 @@ public class InventoryManager : MonoBehaviour
     public void SwitchUI()
     {
         Globals.isUIOpen = !Globals.isUIOpen;
+    }
+
+    public void DisplayItem(Item i)
+    {
+        if (!pantDisplayArea.activeSelf) pantDisplayArea.SetActive(true);
+
+        descriptionText.text = i.itemDescription;
+        modelMaterial[modelGender].material = i.materials[modelGender];
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: SpongeBob
   m_EditorClassIdentifier: 
+  itemRarity: 2
   materials:
   - {fileID: 2100000, guid: 6ffc14b19002398439326cf6c16bfd68, type: 2}
   - {fileID: 2100000, guid: dbef31a0f13cfbf4e87acfb5a928da3f, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: "Absorbent and yellow, just like him! These square pants will
     make you feel ready for anything\u2014even flipping burgers at the Krusty Krab!"
   itemIcon: {fileID: 4562682840266587460, guid: a5bdd151ad2a2ce45bac310ad13136cc, type: 3}
+  isLightening: 0

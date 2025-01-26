@@ -14,7 +14,7 @@ public class OpeningSceneManager : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            SceneManager.LoadScene("Gameplay");
+            SceneManager.LoadScene("MainGame");
         }
     }
 }
