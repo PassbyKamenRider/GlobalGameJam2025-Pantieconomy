@@ -23,7 +23,7 @@ public class Bubble : MonoBehaviour
         if (Globals.enableTestMode) PopBubble();
     }
 
-    private void PopBubble()
+    public void PopBubble()
     {
         if (Globals.isUIOpen)
         {
