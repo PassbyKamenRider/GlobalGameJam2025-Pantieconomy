@@ -52,7 +52,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        cashText.text = "Cash: " + PlayerStats.cash;
+        cashText.text = "Cash: " + Mathf.Round(PlayerStats.cash * 100f) / 100f;
 
         if (Globals.enableTestMode)
         {
