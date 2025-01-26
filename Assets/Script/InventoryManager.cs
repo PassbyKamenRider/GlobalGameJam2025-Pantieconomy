@@ -216,7 +216,7 @@ public class InventoryManager : MonoBehaviour
         models[modelGender].SetActive(true);
     }
 
-    public void sellItem(Item item)
+    public void updateItemPrice(Item item)
     {
         switch (item.itemRarity)
         {
