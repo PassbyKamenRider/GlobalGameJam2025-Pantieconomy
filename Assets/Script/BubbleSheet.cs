@@ -33,6 +33,11 @@ public class BubbleSheet : MonoBehaviour
         }
     }
 
+    public void PlayDropSound()
+    {
+        soundManager.PlayGetSound();
+    }
+
     private void FadeOut()
     {
         Instantiate(bubbleSheetPrefab, initPosition, Quaternion.Euler(initRotation));

@@ -76,6 +76,7 @@ public class Bubble : MonoBehaviour
                 GameObject tmp = Instantiate(vfxs[rarity], transform,false);
                 tmp.transform.localScale = tmp.transform.localScale * 0.1f;
                 InventoryManager.Instance.AddRandItem(rarity);
+                bubbleSheet.PlayDropSound();
                 return;
             }
 
