@@ -35,6 +35,7 @@ public class MarketManager : MonoBehaviour
     public float inflationIndex;
 
     public float refreshRate;
+    public int refreshTimeBeforeDecline;
 
     
 
@@ -163,10 +164,20 @@ public class MarketManager : MonoBehaviour
     private IEnumerator MarketRefresh()
     {
         float i = 0.01f;
-        while (true)
-        {
+        for(int j = 0; j <= refreshTimeBeforeDecline;j++) {
+        
             GenerateNewMarket(i);
             i = i + 1.0f;
+
+
+            yield return new WaitForSeconds(refreshRate);
+        }
+
+        for(int j = 0; j <= refreshTimeBeforeDecline; j++)
+        {
+            GenerateNewMarket(i);
+
+            i = i - 1.0f;
 
             yield return new WaitForSeconds(refreshRate);
         }
