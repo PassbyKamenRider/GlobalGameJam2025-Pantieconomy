@@ -33,11 +33,19 @@ public class Bubble : MonoBehaviour
         
         if (!isPopped)
         {
-            isPopped = true;
-            defaultBubble.enabled = false;
-            poppedBubble.enabled = true;
-            bubbleSheet.PopBubble();
-            DetermineDrop();
+            if (PlayerStats.UseCash(2))
+            {
+                PlayerStats.poppedAmount += 1;
+                isPopped = true;
+                defaultBubble.enabled = false;
+                poppedBubble.enabled = true;
+                bubbleSheet.PopBubble();
+                DetermineDrop();
+            }
+            else
+            {
+                Debug.Log("Not enough cash to buy bubble");
+            }
         }
         poppedBubble.enabled = true;
     }

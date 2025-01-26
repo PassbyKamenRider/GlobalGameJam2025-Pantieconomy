@@ -61,7 +61,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        cashText.text = "Cash: " + PlayerStats.cash;
+        cashText.text = "Cash: " + Mathf.Round(PlayerStats.cash * 100f) / 100f;
 
         if (Globals.enableTestMode)
         {
@@ -101,6 +101,7 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(Item item)
     {
+        PlayerStats.pantCollected += 1;
         if (items.ContainsKey(item))
         {
             if (items[item] == 0)
