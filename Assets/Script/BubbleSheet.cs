@@ -8,10 +8,12 @@ public class BubbleSheet : MonoBehaviour
     [SerializeField] Transform[] bubbleTransforms;
     [SerializeField] GameObject bubblePrefab;
     private Animator animator;
+    private SoundManager soundManager;
     private int bubbleCount = Globals.bubblePerSheet;
 
     private void Start()
     {
+        soundManager = FindAnyObjectByType<SoundManager>();
         animator = GetComponent<Animator>();
         for (int i = 0; i < bubbleTransforms.Length; i++)
         {
@@ -23,6 +25,7 @@ public class BubbleSheet : MonoBehaviour
 
     public void PopBubble()
     {
+        soundManager.PlayPopSound();
         bubbleCount -= 1;
         if (bubbleCount == 0)
         {

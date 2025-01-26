@@ -22,6 +22,12 @@ public class Bubble : MonoBehaviour
 
     private void PopBubble()
     {
+        if (Globals.isUIOpen)
+        {
+            Debug.Log("Player is using UI, can't pop bubble");
+            return;
+        }
+        
         if (!isPopped)
         {
             isPopped = true;

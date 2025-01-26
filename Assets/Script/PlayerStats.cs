@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour
     public static float dropRate = 50f;
     public static float dropRarity = 5f;
     public static int popPerclick;
-    public static float cash;
+    public static float cash = 500f;
 
     public static void AddCash(float val)
     {

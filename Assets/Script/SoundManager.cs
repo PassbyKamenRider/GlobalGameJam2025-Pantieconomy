@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] AudioSource[] popSounds;
+    [SerializeField] AudioSource[] purchaseSounds;
+    public void PlayPopSound()
     {
-        
+        popSounds[Random.Range(0, popSounds.Length)].Play();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void PlayPurchaseSound()
     {
-        
+        purchaseSounds[Random.Range(0, purchaseSounds.Length)].Play();
     }
 }
