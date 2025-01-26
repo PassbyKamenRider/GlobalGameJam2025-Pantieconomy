@@ -79,10 +79,10 @@ public class MarketManager : MonoBehaviour
             break;
         }
 
-        marketItemDisplay.itemName = randItem.itemName;
-        marketItemDisplay.itemIcon = randItem.itemIcon;
-        marketItemDisplay.itemDescription = randItem.itemDescription;
-        marketItemDisplay.itemMaterials = randItem.materials;
+        // marketItemDisplay.itemName = randItem.itemName;
+        // marketItemDisplay.itemIcon = randItem.itemIcon;
+        // marketItemDisplay.itemDescription = randItem.itemDescription;
+        // marketItemDisplay.itemMaterials = randItem.materials;
         marketItemDisplay.item = randItem;
 
         //calculate price
@@ -94,6 +94,7 @@ public class MarketManager : MonoBehaviour
 
         //change price
         marketItemDisplay.itemPrice = Mathf.Round(inflatedPrice * 100f) / 100f;
+        marketItemDisplay.item.currentPrice = marketItemDisplay.itemPrice;
 
         //change quantity
         marketItemDisplay.itemQuantity = quantity;
@@ -190,7 +191,7 @@ public class MarketManager : MonoBehaviour
 
         if (!PlayerStats.UseCash(selectedItem.itemPrice))
         {
-            Debug.Log("Not Enough Money to Buy " + selectedItem.itemName);
+            Debug.Log("Not Enough Money to Buy " + selectedItem.item.itemName);
         }
         else if (selectedItem.itemQuantity == 0)
         {
@@ -202,7 +203,7 @@ public class MarketManager : MonoBehaviour
             selectedItem.UpdateDisplay();
             inventoryManager.AddItem(selectedItem.item);
             soundManager.PlayPurchaseSound();
-            Debug.Log("Bought item " + selectedItem.itemName + " with price: " + selectedItem.itemPrice);
+            Debug.Log("Bought item " + selectedItem.item.itemName + " with price: " + selectedItem.itemPrice);
         }
     }
 }

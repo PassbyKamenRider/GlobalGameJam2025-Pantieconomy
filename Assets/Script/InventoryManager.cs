@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI descriptionText;
     [SerializeField] MeshRenderer[] modelMaterial;
     [SerializeField] GameObject[] models;
+    [SerializeField] GameObject redDot;
+    [SerializeField] TextMeshProUGUI cashText;
     public static InventoryManager Instance;
     public Dictionary<Item, int> items = new();
     public Transform ItemContent;
@@ -50,6 +52,8 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
+        cashText.text = "Cash: " + PlayerStats.cash;
+
         if (Globals.enableTestMode)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -90,6 +94,11 @@ public class InventoryManager : MonoBehaviour
     {
         if (items.ContainsKey(item))
         {
+            if (items[item] == 0)
+            {
+                // show red dot
+                redDot.SetActive(true);
+            }
             items[item] += 1;
         }
         else
@@ -127,6 +136,11 @@ public class InventoryManager : MonoBehaviour
 
         if (items.ContainsKey(item))
         {
+            if (items[item] == 0)
+            {
+                // show red dot
+                redDot.SetActive(true);
+            }
             items[item] += 1;
         }
         else

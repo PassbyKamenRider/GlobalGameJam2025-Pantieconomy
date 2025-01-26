@@ -4,10 +4,10 @@ using TMPro;
 
 public class MarketItemDisplay : MonoBehaviour
 {
-    [HideInInspector] public string itemName, itemDescription;
-    [HideInInspector] public Sprite itemIcon;
+    // [HideInInspector] public string itemName, itemDescription;
+    // [HideInInspector] public Sprite itemIcon;
     [HideInInspector] public float itemQuantity, itemPrice;
-    [HideInInspector] public Material[] itemMaterials;
+    // [HideInInspector] public Material[] itemMaterials;
     [HideInInspector] public Item item;
     [SerializeField] Image itemIconImg;
     [SerializeField] TextMeshProUGUI itemNameText, itemQuantityText, itemPriceText;
@@ -22,8 +22,8 @@ public class MarketItemDisplay : MonoBehaviour
 
     public void UpdateDisplay()
     {
-        itemNameText.text = itemName;
-        itemIconImg.sprite = itemIcon;
+        itemNameText.text = item.itemName;
+        itemIconImg.sprite = item.itemIcon;
         itemQuantityText.text = itemQuantity.ToString();
         itemPriceText.text = itemPrice.ToString();
     }
@@ -31,7 +31,7 @@ public class MarketItemDisplay : MonoBehaviour
     private void DisplayItem()
     {
         marketManager.SelectItem(this);
-        marketManager.ChangeDescription(itemDescription);
-        marketManager.ChangeModelMat(itemMaterials);
+        marketManager.ChangeDescription(item.itemDescription);
+        marketManager.ChangeModelMat(item.materials);
     }
 }
