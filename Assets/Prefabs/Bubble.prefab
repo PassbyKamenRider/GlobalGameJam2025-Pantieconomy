@@ -237,9 +237,9 @@ MonoBehaviour:
   poppedBubble: {fileID: 4393011414333748100}
   vfxs:
   - {fileID: 5778516237870659912, guid: 7ae8c4a73227c904899bb45f6b817868, type: 3}
-  - {fileID: 7158800054035161741, guid: 5a97479098c68ec4b9288aaef7116d3d, type: 3}
   - {fileID: 7158800054035161741, guid: 8f0039a68b96b564ab0f50fae4accae8, type: 3}
   - {fileID: 6815772969067041280, guid: a3994e452b8f94e4d990f010e95423a9, type: 3}
+  - {fileID: 880376016262935372, guid: a875d352dffceea4685b7ec52dd678db, type: 3}
   - {fileID: 880376016262935372, guid: f3be677b240594e42a8a1844caa7bff2, type: 3}
   bubbleSheet: {fileID: 0}
 --- !u!61 &5028357557994381986
