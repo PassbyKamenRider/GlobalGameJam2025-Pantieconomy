@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
+  m_Name: normal black
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 169950bd99a7cfd43a4e26e5a74d77d5, type: 2}
+  - {fileID: 2100000, guid: 169950bd99a7cfd43a4e26e5a74d77d5, type: 2}
+  itemName: Normal Panty - Black
+  itemDescription: The most plain and boring pair of underwear on Earth
+  itemIcon: {fileID: 6934086728263231946, guid: 49eb1e63bb2f11a4f8dde14e1a184bb7, type: 3}

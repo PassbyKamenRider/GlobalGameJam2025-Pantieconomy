@@ -3,9 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item", menuName = "Item/Create New Item")] 
 public class Item: ScriptableObject
 {
-    public int id;
+    public Material[] materials;
     public string itemName;
-    public int num;
-    public int rarity;
+    public string itemDescription;
     public Sprite itemIcon;
 }

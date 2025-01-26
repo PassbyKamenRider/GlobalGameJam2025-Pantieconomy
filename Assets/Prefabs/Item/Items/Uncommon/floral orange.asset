@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
+  m_Name: floral orange
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: d69fb67ad61ccbc4993e3f91746f3aac, type: 2}
+  - {fileID: 2100000, guid: d69fb67ad61ccbc4993e3f91746f3aac, type: 2}
+  itemName: Floral Panty - Orange
+  itemDescription: "Grandma\u2019s Timeless Floral Panties\u2014A Relic of the Last
+    Century"
+  itemIcon: {fileID: 1035811146341020437, guid: 7e80e0c7b0e85784caabbcf5cc8633d6, type: 3}

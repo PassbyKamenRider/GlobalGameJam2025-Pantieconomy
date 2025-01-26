@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
+  m_Name: Coalball Love
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 7acf6ad14dad453488555edf665156b7, type: 2}
+  - {fileID: 2100000, guid: 0fff184c5b4e0f445aa9d009573d3039, type: 2}
+  itemName: Coalball Love
+  itemDescription: Coalball sent you a love, hit "buy" to recieve
+  itemIcon: {fileID: 6450683381664700882, guid: c81b6a189020054458c3bc47c5d7ad7d, type: 3}

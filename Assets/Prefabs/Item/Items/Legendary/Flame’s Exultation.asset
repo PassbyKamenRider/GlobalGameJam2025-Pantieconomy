@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
+  m_Name: "Flame\u2019s Exultation"
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: c917ff1916944a249a475f3efd457037, type: 2}
+  - {fileID: 2100000, guid: da0531e1583d9fb43b7e5ab1a1053cb1, type: 2}
+  itemName: "Flame\u2019s Exultation"
+  itemDescription: The underwear once worn by a necromancer on the day he slew his
+    own father. To this day, it smolders with an ominous flame, whispering of doom.
+    Perhaps any who dare claim it shall find themselves dragged into the abyss.
+  itemIcon: {fileID: 4987901684691990599, guid: 6bfe9119566104749a34dc1c37b8a96e, type: 3}

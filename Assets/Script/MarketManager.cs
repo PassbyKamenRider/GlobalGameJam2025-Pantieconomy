@@ -1,31 +1,18 @@
-using NUnit.Framework;
 using UnityEngine;
-using System.Collections.Generic;
 using System.Collections;
+using TMPro;
 using UnityEngine.UI;
-using System.CodeDom.Compiler;
-using UnityEditor.ShaderGraph.Internal;
 
 public class MarketManager : MonoBehaviour
 {
-
     public static MarketManager Instance;
-
     public Transform MarketContent;
-
-    public GameObject MarketContentPrefabOne;
-    public GameObject MarketContentPrefabTwo;
-    public GameObject MarketContentPrefabThree;
-    public GameObject MarketContentPrefabFour;
-    public GameObject MarketContentPrefabFive;
-
-    private GameObject[] MarketContentOne;
-    private GameObject[] MarketContentTwo;
-    private GameObject[] MarketContentThree;
-    private GameObject[] MarketContentFour;
-    private GameObject[] MarketContentFive;
-
-
+    public GameObject marketItemPrefab;
+    public Item[] commonItems, uncommonItems, rareItems, epicItems, legendaryItems;
+    [SerializeField] GameObject pantDisplayArea;
+    [SerializeField] TextMeshProUGUI descriptionText;
+    [SerializeField] MeshRenderer modelMaterial;
+    private int modelGender; // 0: female, 1: male
 
     [Header("Math")]
 
@@ -37,15 +24,11 @@ public class MarketManager : MonoBehaviour
     public float refreshRate;
     public int refreshTimeBeforeDecline;
 
-    
-
     public float PriceOne;
     public float PriceTwo;
     public float PriceThree;
     public float PriceFour;
     public float PriceFive;
-
-
 
     public void Awake()
     {
@@ -54,71 +37,62 @@ public class MarketManager : MonoBehaviour
 
     private void Start()
     {
-        MarketContentOne = getChild(MarketContentPrefabOne);
-        MarketContentTwo = getChild(MarketContentPrefabTwo);
-        MarketContentThree = getChild(MarketContentPrefabThree);
-        MarketContentFour = getChild(MarketContentPrefabFour);
-        MarketContentFive = getChild(MarketContentPrefabFive);
-
         StartCoroutine(MarketRefresh());
-        
-
     }
 
-    private void Update()
+    public void GenerateMarketItem(float inflation, float basePrice, int rarity) 
     {
-        if(Input.GetKeyUp(KeyCode.Escape))
+        GameObject spawnedMarketItem = Instantiate(marketItemPrefab, MarketContent);
+        MarketItemDisplay marketItemDisplay = spawnedMarketItem.GetComponent<MarketItemDisplay>();
+        Item randItem = null;
+
+        switch (rarity)
         {
-            GenerateNewMarket(1.0f);
+            // common
+            case 0:
+            randItem = commonItems[Random.Range(0, commonItems.Length)];
+            break;
+
+            // uncommon
+            case 1:
+            randItem = uncommonItems[Random.Range(0, uncommonItems.Length)];
+            break;
+
+            // rare
+            case 2:
+            randItem = rareItems[Random.Range(0, rareItems.Length)];
+            break;
+
+            // epic
+            case 3:
+            randItem = epicItems[Random.Range(0, epicItems.Length)];
+            break;
+
+            // lengendary
+            case 4:
+            randItem = legendaryItems[Random.Range(0, legendaryItems.Length)];
+            break;
         }
-        
 
-    }
-
-    public GameObject[] getChild(GameObject MarketItemCollectionLevel)
-    {
-
-        GameObject[] res = new GameObject[MarketItemCollectionLevel.transform.childCount];
-        for (int i = 0; i < MarketItemCollectionLevel.transform.childCount; i++)
-        {
-            res[i] = MarketItemCollectionLevel.transform.GetChild(i).gameObject;
-        }
-
-        return res;
-    
-    }
-
-
-    public void GenerateMarketItem(float inflation, float basePrice, GameObject[] Marketitems) 
-    { 
-
-
-        int i = Random.Range(0,Marketitems.Length);
-
-        GameObject gameObject = Instantiate(Marketitems[i], MarketContent);
+        marketItemDisplay.itemName = randItem.itemName;
+        marketItemDisplay.itemIcon = randItem.itemIcon;
+        marketItemDisplay.itemDescription = randItem.itemDescription;
+        marketItemDisplay.itemMaterials = randItem.materials;
 
         //calculate price
         float modifier = Random.Range(-inflationModifierRange, inflationModifierRange);
         float inflatedPrice = basePrice * inflation + modifier;
-        Debug.Log(inflatedPrice);
 
         //calculate quantity
-        int num = Random.Range(1, MarketItemCount);
+        int quantity = Random.Range(1, MarketItemCount);
 
         //change price
-        var price = gameObject.transform.Find("MarketItemPrice").GetComponent<Text>();   
-        string priceStr = inflatedPrice.ToString("#.00");
-        Debug.Log($"Price: {priceStr}");
-        price.text = priceStr;
-        Debug.Log(price.text);
+        marketItemDisplay.itemPrice = Mathf.Round(inflatedPrice * 100f) / 100f;
 
         //change quantity
-        var quantity = gameObject.transform.Find("MarketItemQuantity").GetComponent<Text>();
-        string numStr = num.ToString();
-        Debug.Log(numStr);
-        quantity.text = numStr;
-        Debug.Log(quantity.text);
+        marketItemDisplay.itemQuantity = quantity;
 
+        marketItemDisplay.UpdateDisplay();
     }
 
     public void GenerateNewMarket(float i)
@@ -130,6 +104,7 @@ public class MarketManager : MonoBehaviour
                 Destroy(item.gameObject);
             }
         }
+
         float ind = i / 5.0f;
         float inflation = 1.0f + ind * ind * ind;
 
@@ -139,24 +114,24 @@ public class MarketManager : MonoBehaviour
 
             if (num < 50)
             {
-                GenerateMarketItem(inflation, PriceOne, MarketContentOne);
+                GenerateMarketItem(inflation, PriceOne, 0);
             }
 
             else if (num < 80)
             {
-                GenerateMarketItem(inflation, PriceTwo, MarketContentTwo);
+                GenerateMarketItem(inflation, PriceTwo, 1);
             }
             else if (num < 90)
             {
-                GenerateMarketItem(inflation, PriceThree, MarketContentThree);
+                GenerateMarketItem(inflation, PriceThree, 2);
             }
             else if (num < 96)
             {
-                GenerateMarketItem(inflation, PriceFour, MarketContentFour);
+                GenerateMarketItem(inflation, PriceFour, 3);
             }
             else
             {
-                GenerateMarketItem(inflation, PriceFive, MarketContentFive);
+                GenerateMarketItem(inflation, PriceFive, 4);
             }
         }
     }
@@ -167,8 +142,7 @@ public class MarketManager : MonoBehaviour
         for(int j = 0; j <= refreshTimeBeforeDecline;j++) {
         
             GenerateNewMarket(i);
-            i = i + 1.0f;
-
+            i += 1.0f;
 
             yield return new WaitForSeconds(refreshRate);
         }
@@ -177,12 +151,22 @@ public class MarketManager : MonoBehaviour
         {
             GenerateNewMarket(i);
 
-            i = i - 1.0f;
+            i -= 1.0f;
 
             yield return new WaitForSeconds(refreshRate);
         }
     }
+
+    public void ChangeDescription(string text)
+    {
+        if (!pantDisplayArea.activeSelf) pantDisplayArea.SetActive(true);
+
+        descriptionText.text = text;
+    }
+
+    public void ChangeModelMat(Material[] mat)
+    {
+        modelMaterial.material = mat[modelGender];
+    }
     
-
-
 }
