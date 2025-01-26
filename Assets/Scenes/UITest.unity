@@ -621,7 +621,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Items: []
-  listedGameObj: []
   ItemContent: {fileID: 1130814378}
   InventoryItem: {fileID: 2649086929143365118, guid: be95a11d81d9019449b5f13f7758e651, type: 3}
 --- !u!4 &493863530
@@ -1339,7 +1338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &787246048
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3190,6 +3189,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cbbc35a948fa9044b5481bffc989754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amplitude: 0.3
+  floatSpeed: 1.5
+  rotateSpeed: 100
   model: {fileID: 2098275041}
 --- !u!1 &1556014812
 GameObject:
