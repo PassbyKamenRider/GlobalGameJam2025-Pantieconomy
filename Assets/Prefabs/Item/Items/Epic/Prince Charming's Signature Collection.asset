@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: Prince Charming's Signature Collection
   m_EditorClassIdentifier: 
+  itemRarity: 3
   materials:
   - {fileID: 2100000, guid: 8346b487c7919764b85171c70f42d3e9, type: 2}
   - {fileID: 2100000, guid: bf3fd6125b16a22449d72b58e26b4ea6, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: "Wear these and channel your inner heartthrob\u2014guaranteed
     to make heads turn (or at least get a laugh)!"
   itemIcon: {fileID: -8408683830672229659, guid: 9cc4810e9107b0a479bb6e4de0313047, type: 3}
+  isLightening: 0

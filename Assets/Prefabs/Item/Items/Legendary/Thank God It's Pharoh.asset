@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: Thank God It's Pharoh
   m_EditorClassIdentifier: 
+  itemRarity: 4
   materials:
   - {fileID: 2100000, guid: 5d2b6f12dbc91774f9d9ffda916c927f, type: 2}
   - {fileID: 2100000, guid: 696edc4ea3027eb48b5d08a82671e28d, type: 2}
   itemName: Thank God It's Pharoh
   itemDescription: These pants were made when there was too much toilet paper.
   itemIcon: {fileID: -3575533902697581562, guid: 8383f49485a97bd4a81ddc3ebc347ec8, type: 3}
+  isLightening: 0

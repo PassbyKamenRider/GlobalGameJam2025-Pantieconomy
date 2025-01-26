@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: "\u4E1C\u5317\u5927\u5988\u306EPassion"
   m_EditorClassIdentifier: 
+  itemRarity: 3
   materials:
   - {fileID: 2100000, guid: f5bdf29f466c44d4f93183b2a744fe86, type: 2}
   - {fileID: 2100000, guid: f5bdf29f466c44d4f93183b2a744fe86, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: "Slip these on and become the queen of the square dance\u2014your
     passion will light up the whole neighborhood!"
   itemIcon: {fileID: 9104831847383482129, guid: 3ecf2742a4693be4a87bf6f24e99b4a3, type: 3}
+  isLightening: 0

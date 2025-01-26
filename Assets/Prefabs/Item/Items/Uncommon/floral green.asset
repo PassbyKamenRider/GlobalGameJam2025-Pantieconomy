@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: floral green
   m_EditorClassIdentifier: 
+  itemRarity: 1
   materials:
   - {fileID: 2100000, guid: c0e26cfc3a98f00488cb6bdfd7c67108, type: 2}
   - {fileID: 2100000, guid: c0e26cfc3a98f00488cb6bdfd7c67108, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: "Grandma\u2019s Timeless Floral Panties\u2014A Relic of the Last
     Century"
   itemIcon: {fileID: 8183703129083708372, guid: 963f8b6c73eaa384b8e4e4c6d05e682d, type: 3}
+  isLightening: 0

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e9d24987f5bb9049a0649f78863bedb, type: 3}
   m_Name: blue and white
   m_EditorClassIdentifier: 
+  itemRarity: 1
   materials:
   - {fileID: 2100000, guid: 7c2f6952e7648434db938ce38a39e78e, type: 2}
   - {fileID: 2100000, guid: 7c2f6952e7648434db938ce38a39e78e, type: 2}
@@ -19,3 +20,4 @@ MonoBehaviour:
   itemDescription: This pair of underwear looks like it was stolen straight off an
     anime character.
   itemIcon: {fileID: 4360157255746360584, guid: 341634c0e31e2fa4ab638d6c932e6d41, type: 3}
+  isLightening: 0
