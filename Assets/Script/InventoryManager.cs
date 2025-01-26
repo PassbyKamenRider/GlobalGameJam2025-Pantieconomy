@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 
 public class InventoryManager : MonoBehaviour
@@ -19,6 +20,11 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryItem;
     public Item[] commonItems, uncommonItems, rareItems, epicItems, legendaryItems;
     private int modelGender; // 0: female, 1: male
+    public int refreshrate;
+    public int refreshTimeBeforeDecline;
+
+    private float inflation;
+    private MarketManager marketManager;
 
     private void Awake()
     {
@@ -27,6 +33,9 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
+        marketManager = FindAnyObjectByType<MarketManager>();
+        float ind = marketManager.index / 5.0f;
+        inflation = 1.0f + ind * ind * ind;
         foreach (Item i in commonItems)
         {
             items[i] = 0;
@@ -205,4 +214,35 @@ public class InventoryManager : MonoBehaviour
         models[1].SetActive(false);
         models[modelGender].SetActive(true);
     }
+
+    public void sellItem(Item item)
+    {
+        switch (item.itemRarity)
+        {
+            case 0:
+                item.currentPrice = inflation * 1.0f;
+                break;
+
+            case 1:
+                item.currentPrice = inflation * 2.0f;
+                break;
+
+            case 2:
+                item.currentPrice = inflation * 10.0f;
+                break;
+
+            case 3:
+                item.currentPrice = inflation * 25.0f;
+                break;
+
+            case 4:
+                item.currentPrice = inflation * 50.0f;
+                break;
+
+        }
+    }
+
+    
+
+    
 }

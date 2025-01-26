@@ -19,6 +19,7 @@ public class MarketManager : MonoBehaviour
 
     [Header("Math")]
 
+    public float index;
     public int MaxMarketCount;
     public int MarketItemCount;
     public float inflationModifierRange;
@@ -145,20 +146,20 @@ public class MarketManager : MonoBehaviour
 
     private IEnumerator MarketRefresh()
     {
-        float i = 0.01f;
+        
         for(int j = 0; j <= refreshTimeBeforeDecline;j++) {
         
-            GenerateNewMarket(i);
-            i += 1.0f;
+            GenerateNewMarket(index);
+            index += 1.0f;
 
             yield return new WaitForSeconds(refreshRate);
         }
 
         for(int j = 0; j <= refreshTimeBeforeDecline; j++)
         {
-            GenerateNewMarket(i);
+            GenerateNewMarket(index);
 
-            i -= 1.0f;
+            index -= 1.0f;
 
             yield return new WaitForSeconds(refreshRate);
         }
