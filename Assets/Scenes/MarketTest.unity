@@ -529,15 +529,15 @@ MonoBehaviour:
   MarketContentPrefabThree: {fileID: 92386313}
   MarketContentPrefabFour: {fileID: 1535999627}
   MarketContentPrefabFive: {fileID: 1509285000}
-  MaxMarketCount: 5
+  MaxMarketCount: 10
   MarketItemCount: 3
-  inflationModifierRange: 5
+  inflationModifierRange: 1
   inflationIndex: 1
   PriceOne: 1
-  PriceTwo: 0
-  PriceThree: 0
-  PriceFour: 0
-  PriceFive: 0
+  PriceTwo: 2
+  PriceThree: 10
+  PriceFour: 25
+  PriceFive: 50
 --- !u!1001 &373883760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -749,7 +749,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Items: []
-  listedGameObj: []
   ItemContent: {fileID: 0}
   InventoryItem: {fileID: 2649086929143365118, guid: be95a11d81d9019449b5f13f7758e651, type: 3}
 --- !u!4 &493863530

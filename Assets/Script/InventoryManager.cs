@@ -9,7 +9,10 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
     public List<Item> Items = new List<Item>();
-    public List<GameObject> listedGameObj = new List<GameObject>();
+
+    
+
+
     public Transform ItemContent;
     public GameObject InventoryItem;
     private void Awake()

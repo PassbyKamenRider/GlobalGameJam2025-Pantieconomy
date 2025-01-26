@@ -9,8 +9,6 @@ using UnityEditor.ShaderGraph.Internal;
 public class MarketManager : MonoBehaviour
 {
 
-    [SerializeField] public int GameTimeInSeconds;
-
     public static MarketManager Instance;
 
     public Transform MarketContent;
@@ -36,6 +34,8 @@ public class MarketManager : MonoBehaviour
     public float inflationModifierRange;
     public float inflationIndex;
 
+    public float refreshRate;
+
     
 
     public float PriceOne;
@@ -59,14 +59,19 @@ public class MarketManager : MonoBehaviour
         MarketContentFour = getChild(MarketContentPrefabFour);
         MarketContentFive = getChild(MarketContentPrefabFive);
 
-        GenerateNewMarket(1.0f);
+        StartCoroutine(MarketRefresh());
         
 
     }
 
     private void Update()
     {
+        if(Input.GetKeyUp(KeyCode.Escape))
+        {
+            GenerateNewMarket(1.0f);
+        }
         
+
     }
 
     public GameObject[] getChild(GameObject MarketItemCollectionLevel)
@@ -117,8 +122,15 @@ public class MarketManager : MonoBehaviour
 
     public void GenerateNewMarket(float i)
     {
+        foreach (Transform item in MarketContent)
+        {
+            if (item != null)
+            {
+                Destroy(item.gameObject);
+            }
+        }
         float ind = i / 5.0f;
-        float inflation = 1.0f + ind;
+        float inflation = 1.0f + ind * ind * ind;
 
         for (int j = 0; j < MaxMarketCount; j++)
         {
@@ -147,6 +159,19 @@ public class MarketManager : MonoBehaviour
             }
         }
     }
+
+    private IEnumerator MarketRefresh()
+    {
+        float i = 0.01f;
+        while (true)
+        {
+            GenerateNewMarket(i);
+            i = i + 1.0f;
+
+            yield return new WaitForSeconds(refreshRate);
+        }
+    }
+    
 
 
 }
