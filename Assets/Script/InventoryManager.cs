@@ -9,7 +9,7 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField] Color[] rarityColors;
     [SerializeField] GameObject pantDisplayArea;
-    [SerializeField] TextMeshProUGUI descriptionText;
+    [SerializeField] TextMeshProUGUI descriptionText, priceText;
     [SerializeField] MeshRenderer[] modelMaterial;
     [SerializeField] GameObject[] models;
     [SerializeField] GameObject redDot;
@@ -22,9 +22,10 @@ public class InventoryManager : MonoBehaviour
     private int modelGender; // 0: female, 1: male
     public int refreshrate;
     public int refreshTimeBeforeDecline;
-
     private float inflation;
     private MarketManager marketManager;
+    private Item selectedItem;
+    private SoundManager soundManager;
 
     private void Awake()
     {
@@ -33,28 +34,34 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
+        soundManager = FindAnyObjectByType<SoundManager>();
         marketManager = FindAnyObjectByType<MarketManager>();
         float ind = marketManager.index / 5.0f;
         inflation = 1.0f + ind * ind * ind;
         foreach (Item i in commonItems)
         {
             items[i] = 0;
+            updateItemPrice(i);
         }
         foreach (Item i in uncommonItems)
         {
             items[i] = 0;
+            updateItemPrice(i);
         }
         foreach (Item i in rareItems)
         {
             items[i] = 0;
+            updateItemPrice(i);
         }
         foreach (Item i in epicItems)
         {
             items[i] = 0;
+            updateItemPrice(i);
         }
         foreach (Item i in legendaryItems)
         {
             items[i] = 0;
+            updateItemPrice(i);
         }
         ListItem();
     }
@@ -159,9 +166,18 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void RemoveItem(Item item)
+    public void SellItem()
     {
-        items.Remove(item);
+        if (items[selectedItem] == 0)
+        {
+            Debug.Log("Don't have this item, can't sell");
+            return;
+        }
+
+        soundManager.PlayPurchaseSound();
+        items[selectedItem] -= 1;
+        PlayerStats.cash += selectedItem.currentPrice;
+        ListItem();
     }
 
     public void ListItem()
@@ -205,7 +221,9 @@ public class InventoryManager : MonoBehaviour
         if (!pantDisplayArea.activeSelf) pantDisplayArea.SetActive(true);
 
         descriptionText.text = i.itemDescription;
+        priceText.text = i.currentPrice.ToString("F2");
         modelMaterial[modelGender].material = i.materials[modelGender];
+        selectedItem = i;
     }
 
     public void SwitchModel()
