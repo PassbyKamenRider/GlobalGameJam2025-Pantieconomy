@@ -14,6 +14,8 @@ public class Bubble : MonoBehaviour
         int randIdx = Random.Range(0, defaultBubbles.Length);
         defaultBubble.sprite = defaultBubbles[randIdx];
         poppedBubble.sprite = poppedBubbles[randIdx];
+
+        poppedBubble.enabled = false;
     }
 
     private void OnMouseDown()
@@ -35,6 +37,7 @@ public class Bubble : MonoBehaviour
             {
                 isPopped = true;
                 defaultBubble.enabled = false;
+                poppedBubble.enabled = true;
                 bubbleSheet.PopBubble();
                 DetermineDrop();
             }
@@ -43,6 +46,7 @@ public class Bubble : MonoBehaviour
                 Debug.Log("Not enough cash to buy bubble");
             }
         }
+        poppedBubble.enabled = true;
     }
 
     private void DetermineDrop()
@@ -82,6 +86,7 @@ public class Bubble : MonoBehaviour
                 Debug.Log("Dropped item with rarity: " + Globals.rarityTable[rarity]);
                 GameObject tmp = Instantiate(vfxs[rarity], transform,false);
                 tmp.transform.localScale = tmp.transform.localScale * 0.1f;
+                if(rarity >= 4) rarity = 4;
                 InventoryManager.Instance.AddRandItem(rarity);
                 bubbleSheet.PlayDropSound();
                 return;
