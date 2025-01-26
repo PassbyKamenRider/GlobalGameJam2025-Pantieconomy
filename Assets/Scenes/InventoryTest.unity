@@ -389,67 +389,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237494964}
   m_CullTransparentMesh: 1
---- !u!1 &267911344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 267911345}
-  - component: {fileID: 267911346}
-  m_Layer: 0
-  m_Name: MarketManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &267911345
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267911344}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -470.00018, y: -77.22217, z: -0.78717756}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 940006686}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &267911346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267911344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27cb1529a353fb8458f1c21b9fdd9eb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MarketContent: {fileID: 893557064}
-  MarketContentPrefabOne: {fileID: 0}
-  MarketContentPrefabTwo: {fileID: 0}
-  MarketContentPrefabThree: {fileID: 0}
-  MarketContentPrefabFour: {fileID: 0}
-  MarketContentPrefabFive: {fileID: 0}
-  MaxMarketCount: 10
-  MarketItemCount: 3
-  inflationModifierRange: 1
-  inflationIndex: 1
-  refreshRate: 20
-  refreshTimeBeforeDecline: 6
-  PriceOne: 1
-  PriceTwo: 2
-  PriceThree: 10
-  PriceFour: 25
-  PriceFive: 50
 --- !u!1 &493863528
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,9 +418,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5adf1e2f62462e45b2ddf5abbee8fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Items: []
-  ItemContent: {fileID: 0}
+  ItemContent: {fileID: 893557064}
   InventoryItem: {fileID: 2649086929143365118, guid: be95a11d81d9019449b5f13f7758e651, type: 3}
+  commonItems:
+  - {fileID: 11400000, guid: 026284747ca519c42bfa836bbe2929c0, type: 2}
+  - {fileID: 11400000, guid: 69f239fcf22f8184eb456c3871292971, type: 2}
+  - {fileID: 11400000, guid: c52467386a3c963449a0c27c2ab85430, type: 2}
+  uncommonItems:
+  - {fileID: 11400000, guid: 72bd5ff67972bc645b914de788ab0ade, type: 2}
+  - {fileID: 11400000, guid: 1c680078929f61e49a778c75dc5e9cb0, type: 2}
+  - {fileID: 11400000, guid: 24550662eb00b744caf85bf0f048bb8c, type: 2}
+  - {fileID: 11400000, guid: e24635deb64a95f4ab045f5a490d7c2d, type: 2}
+  - {fileID: 11400000, guid: 030a08fb8b889b447bbc865ed5f33af4, type: 2}
+  - {fileID: 11400000, guid: 64120d2dced8b61409b81f108257ef76, type: 2}
+  - {fileID: 11400000, guid: 6aa03f973b19a6a4e9c7615e53835d39, type: 2}
+  rareItems:
+  - {fileID: 11400000, guid: 6fa413143d55c514492cc23be8402119, type: 2}
+  - {fileID: 11400000, guid: cb3da5cb93ee77e478dcd47e2474249f, type: 2}
+  - {fileID: 11400000, guid: 5d8f313e898a17f42988f2c1b02ff504, type: 2}
+  - {fileID: 11400000, guid: 466f4fcb175362b4c97e21a2511276db, type: 2}
+  - {fileID: 11400000, guid: 15856e56163596543babe8d0f7280efa, type: 2}
+  - {fileID: 11400000, guid: 44769a8e0d37c574eb2f5bb2db2235ea, type: 2}
+  - {fileID: 11400000, guid: df44fbf7e36cb7448893bdb5187c1a3a, type: 2}
+  epicItems:
+  - {fileID: 11400000, guid: 52c6e7a5e7930314fba29a36ba1afa80, type: 2}
+  - {fileID: 11400000, guid: 796696fe72976a4418f6046dd9266a93, type: 2}
+  - {fileID: 11400000, guid: aeb527f7dbe924543803de81ab2a54f1, type: 2}
+  - {fileID: 11400000, guid: f4b3b3bb25790f84e8a9c9a8b3550aa0, type: 2}
+  - {fileID: 11400000, guid: 837584b73695f304f951eca78d4b8582, type: 2}
+  - {fileID: 11400000, guid: 3e4c4b3e98d629949a64fb603667b780, type: 2}
+  - {fileID: 11400000, guid: 156be53f25f27434e946d74d1ff504ae, type: 2}
+  legendaryItems:
+  - {fileID: 11400000, guid: e7fbe12bd97f7d646ae54e0f8169abd4, type: 2}
+  - {fileID: 11400000, guid: c0fe5e6ed2e0c414f9ff543956668c88, type: 2}
+  - {fileID: 11400000, guid: 9e98b83b1f5e86a4c897134a6688f71b, type: 2}
+  - {fileID: 11400000, guid: 27ba11ef4008a34479a708ee2d94d48e, type: 2}
 --- !u!4 &493863530
 Transform:
   m_ObjectHideFlags: 0
@@ -703,7 +674,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 267911345}
   - {fileID: 493863530}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
