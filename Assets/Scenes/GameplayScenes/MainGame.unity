@@ -1793,6 +1793,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5adf1e2f62462e45b2ddf5abbee8fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rarityColors: []
+  pantDisplayArea: {fileID: 0}
+  descriptionText: {fileID: 0}
+  modelMaterial: []
   ItemContent: {fileID: 1228252431}
   InventoryItem: {fileID: 2649086929143365118, guid: be95a11d81d9019449b5f13f7758e651, type: 3}
   commonItems:
@@ -3129,6 +3133,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3900212384202465623, guid: 77a7ecd6487006b4d8bb73072ca0b36c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1677875297}
+    - target: {fileID: 3900212384202465623, guid: 77a7ecd6487006b4d8bb73072ca0b36c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BuyItem
+      objectReference: {fileID: 0}
     - target: {fileID: 6445762320788137033, guid: 77a7ecd6487006b4d8bb73072ca0b36c, type: 3}
       propertyPath: m_SizeDelta.x
       value: -430.04987
@@ -3874,6 +3886,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6352563223072972338, guid: 18c5c276a702de846989ce6a9680b99a, type: 3}
   m_PrefabInstance: {fileID: 1677875295}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1677875297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4730215226300259054, guid: 18c5c276a702de846989ce6a9680b99a, type: 3}
+  m_PrefabInstance: {fileID: 1677875295}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27cb1529a353fb8458f1c21b9fdd9eb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1688459670
 GameObject:
   m_ObjectHideFlags: 0
