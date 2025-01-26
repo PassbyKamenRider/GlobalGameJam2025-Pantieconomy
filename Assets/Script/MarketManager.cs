@@ -195,6 +195,7 @@ public class MarketManager : MonoBehaviour
         {
             selectedItem.itemQuantity -= 1;
             selectedItem.UpdateDisplay();
+            PlayerStats.UseCash(selectedItem.itemPrice);
             Debug.Log("Bought item " + selectedItem.itemName + " with price: " + selectedItem.itemPrice);
         }
     }
