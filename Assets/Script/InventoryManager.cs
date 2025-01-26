@@ -18,19 +18,45 @@ public class InventoryManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.E))
+    public void AddItem(Item item)
+    {
+        if (items.ContainsKey(item))
         {
-            for (int i = 0; i < uncommonItems.Length; i++)
-            {
-                AddItem(uncommonItems[i]);
-            }
-            ListItem();
+            items[item] += 1;
+        }
+        else
+        {
+            items[item] = 1;
         }
     }
 
-    public void AddItem(Item item)
+    public void AddRandItem(int rarity)
     {
+        Item item = null;
+
+        switch (rarity)
+        {
+            case 0:
+            item = commonItems[Random.Range(0, commonItems.Length)];
+            break;
+
+            case 1:
+            item = uncommonItems[Random.Range(0, uncommonItems.Length)];
+            break;
+
+            case 2:
+            item = rareItems[Random.Range(0, rareItems.Length)];
+            break;
+
+            case 3:
+            item = epicItems[Random.Range(0, epicItems.Length)];
+            break;
+
+            case 4:
+            item = legendaryItems[Random.Range(0, legendaryItems.Length)];
+            break;
+        }
+
         if (items.ContainsKey(item))
         {
             items[item] += 1;
@@ -45,8 +71,6 @@ public class InventoryManager : MonoBehaviour
     {
         items.Remove(item);
     }
-
-    
 
     public void ListItem()
     {
@@ -64,7 +88,7 @@ public class InventoryManager : MonoBehaviour
             {
                 GameObject obj = Instantiate(InventoryItem, ItemContent);
 
-                var Name = obj.transform.Find("ItemName").GetComponent<Text>();
+                var Name = obj.transform.Find("ItemCount").GetComponent<Text>();
                 
                 Name.text = i.Value.ToString();
 
@@ -75,5 +99,8 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    
+    public void SwitchUI()
+    {
+        Globals.isUIOpen = !Globals.isUIOpen;
+    }
 }

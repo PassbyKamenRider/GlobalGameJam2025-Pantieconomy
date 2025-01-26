@@ -5,6 +5,7 @@ public class Bubble : MonoBehaviour
 {
     [SerializeField] Sprite[] defaultBubbles, poppedBubbles;
     [SerializeField] SpriteRenderer defaultBubble, poppedBubble;
+    [SerializeField] GameObject[] vfxs;
     public BubbleSheet bubbleSheet;
     private bool isPopped;
 
@@ -41,8 +42,6 @@ public class Bubble : MonoBehaviour
     {
         float randVal = Random.Range(0f, 100f);
 
-        Debug.Log("Drop rate determine value is: " + randVal);
-
         if (randVal <= PlayerStats.dropRate)
         {
             Debug.Log("Loot dropped, determine rarity");
@@ -74,6 +73,8 @@ public class Bubble : MonoBehaviour
                 }
 
                 Debug.Log("Dropped item with rarity: " + Globals.rarityTable[rarity]);
+                Instantiate(vfxs[rarity], transform);
+                InventoryManager.Instance.AddRandItem(rarity);
                 return;
             }
 
