@@ -13,6 +13,7 @@ public class BubbleSheet : MonoBehaviour
     private SoundManager soundManager;
     private int bubbleCount = Globals.bubblePerSheet;
     private int idx;
+    private bool hasEntered;
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class BubbleSheet : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !Globals.isUIOpen)
+        if (Input.GetKeyDown(KeyCode.Space) && !Globals.isUIOpen && hasEntered)
         {
             for (int i = 0; i < PlayerStats.popPerclick; i++)
             {
@@ -64,6 +65,11 @@ public class BubbleSheet : MonoBehaviour
     {
         Instantiate(bubbleSheetPrefab, initPosition, Quaternion.Euler(initRotation));
         animator.Play("BubbleSheetLeave");
+    }
+
+    public void HasEnter()
+    {
+        hasEntered = true;
     }
 
     public void DestorySelf()
