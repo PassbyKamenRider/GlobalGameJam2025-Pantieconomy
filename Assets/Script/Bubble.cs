@@ -35,6 +35,7 @@ public class Bubble : MonoBehaviour
         {
             if (PlayerStats.UseCash(2))
             {
+                PlayerStats.poppedAmount += 1;
                 isPopped = true;
                 defaultBubble.enabled = false;
                 poppedBubble.enabled = true;

@@ -92,6 +92,7 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(Item item)
     {
+        PlayerStats.pantCollected += 1;
         if (items.ContainsKey(item))
         {
             if (items[item] == 0)
