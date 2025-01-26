@@ -7,8 +7,6 @@ public class DIsplayController : MonoBehaviour
 
     public string Description;
 
-    public Material Material;
-
     public GameObject obj;
 
     public void SetText()
@@ -16,7 +14,7 @@ public class DIsplayController : MonoBehaviour
         Display.text = Description;
     }
 
-    public void setMaterial()
+    public void setOBJ()
     {
         return;
     }
