@@ -13,6 +13,7 @@ public class MarketManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI descriptionText;
     [SerializeField] MeshRenderer modelMaterial;
     private int modelGender; // 0: female, 1: male
+    private MarketItemDisplay selectedItem;
 
     [Header("Math")]
 
@@ -168,5 +169,33 @@ public class MarketManager : MonoBehaviour
     {
         modelMaterial.material = mat[modelGender];
     }
-    
+
+    public void SelectItem(MarketItemDisplay item)
+    {
+        selectedItem = item;
+    }
+
+    public void BuyItem()
+    {
+        if (selectedItem == null)
+        {
+            Debug.Log("No Item Selected!");
+            return;
+        }
+
+        if (!PlayerStats.UseCash(selectedItem.itemPrice))
+        {
+            Debug.Log("Not Enough Money to Buy " + selectedItem.itemName);
+        }
+        else if (selectedItem.itemQuantity == 0)
+        {
+            Debug.Log("Item Is Sold Out!");
+        }
+        else
+        {
+            selectedItem.itemQuantity -= 1;
+            selectedItem.UpdateDisplay();
+            Debug.Log("Bought item " + selectedItem.itemName + " with price: " + selectedItem.itemPrice);
+        }
+    }
 }
